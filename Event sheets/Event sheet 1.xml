@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable comment="The total distance flown so far, in pixels." constant="0" name="TotalDistance" sid="4015867643157149" static="0" type="number">0</variable>
+        <variable comment="The X co-ordinate where to create the next block" constant="0" name="NextBlockX" sid="5327114571015895" static="0" type="number">665</variable>
+        <variable constant="0" name="tempoOverBottom" sid="678939413889706" static="0" type="number">0</variable>
+        <variable constant="0" name="tempoOverTop" sid="524613058185703" static="0" type="number">0</variable>
+        <variable comment="The Y co-ordinate to slide the top block spawner to." constant="0" name="TopSpawnerTargetY" sid="3439610980831968" static="0" type="number">40</variable>
+        <variable comment="The Y co-ordinate to slide the bottom spawner to." constant="0" name="BottomSpawnerTargetY" sid="726966054651142" static="0" type="number">308</variable>
+        <comment>Make sure everything moves left across the screen (since the default 0 degrees is right)</comment>
+        <event-block sid="4183837126602792">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="955088681619798" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2752486826635685" type="TiledBackground">
+                    <param id="0" name="Angle">180</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4901695194915258">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="243316901774439" type="TiledBackground">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">-Self.Width / 2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="2179266091062072" type="TiledBackground">
+                    <param id="0" name="X">Self.X + Self.Width / 2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6384751921016593">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="310284521710728" type="System">
+                    <param id="0" name="Interval (seconds)">0.25</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="9060271483953864" type="DistanceDisplay">
+                    <param id="0" name="Text">round(TotalDistance)</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Make the player fall down unless we&apos;re touching the screen (or holding space), in which case accelerate them upwards.</comment>
+        <event-block any="1" sid="9234784188668333">
+            <conditions>
+                <condition id="2" name="Is in touch" sid="3949683883546242" type="Touch" />
+                <condition id="2" name="Key is down" sid="9858944201141429" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="6722068397895388" type="Player">
+                    <param id="0" name="Y">Self.Y-3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3300314078748617">
+            <conditions>
+                <condition id="-22" name="Else" sid="6093573010861637" type="System" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="813877543297609" type="Player">
+                    <param id="0" name="Y">Self.Y+3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="873792006417780">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="761172527312585" type="System">
+                    <param id="0" name="Interval (seconds)">random(10,20)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="604032006011430" type="System">
+                    <param id="0" name="Object to create">arvore</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">749</param>
+                    <param id="3" name="Y">105</param>
+                </action>
+                <action id="-3" name="Create object" sid="591655349905581" type="System">
+                    <param id="0" name="Object to create">inimigo_baixo</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">721</param>
+                    <param id="3" name="Y">216</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="339935293100052">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="983400355092232" type="System">
+                    <param id="0" name="Interval (seconds)">3</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="905888907429890" type="arvore" />
+                <condition id="-8" name="Compare two values" sid="766449251875594" type="System">
+                    <param id="0" name="First value">Player.x</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">arvore.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="261548122904981" type="System">
+                    <param id="0" name="Object to create">tiro_arvore</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">arvore.x</param>
+                    <param id="3" name="Y">arvore.y</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="869998237342898" type="tiro_arvore">
+                    <param id="0" name="X">Player.X</param>
+                    <param id="1" name="Y">Player.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="335934998270811">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="802770111382149" type="Player">
+                    <param id="0" name="Object">top</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="126068661530310" type="System">
+                    <param id="0" name="First value">tempoOverTop</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="927153581506947" type="Sprite4">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="363435062773364">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="793398529584488" type="Player">
+                    <param id="0" name="Object">bottom</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="151593771383143" type="System">
+                    <param id="0" name="First value">tempoOverBottom</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="552277422144862" type="Sprite5">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="592720828891157">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="218181261599439" type="Player">
+                    <param id="0" name="Object">top</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="946867453042148" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="565831561115028" type="System">
+                    <param id="0" name="Variable">tempoOverTop</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="433644848355208">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="955987482221308" type="Player">
+                    <param id="0" name="Object">bottom</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="299147121573749" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="888719403550671" type="System">
+                    <param id="0" name="Variable">tempoOverBottom</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
