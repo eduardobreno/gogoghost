@@ -238,7 +238,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="arvore" uid="2">
+                <instance type="enemy3" uid="2">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -261,8 +261,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>778.166748047</x>
-                        <y>76</y>
+                        <x>1026</x>
+                        <y>114</y>
                         <z>0</z>
                         <width>15</width>
                         <height>321</height>
@@ -308,7 +308,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="inimigo_baixo" uid="7">
+                <instance type="enemy1" uid="7">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -330,19 +330,19 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>697</x>
-                        <y>313</y>
+                        <x>541</x>
+                        <y>357</y>
                         <z>0</z>
                         <width>250</width>
                         <height>250</height>
                         <depth>0</depth>
-                        <hotspotX>0.476000011</hotspotX>
-                        <hotspotY>0.819999993</hotspotY>
+                        <hotspotX>0.472000003</hotspotX>
+                        <hotspotY>1.003999949</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite2" uid="9">
+                <instance type="enemy2" uid="9">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -364,19 +364,19 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>487</x>
-                        <y>230</y>
+                        <x>723</x>
+                        <y>358</y>
                         <z>0</z>
                         <width>250</width>
                         <height>250</height>
                         <depth>0</depth>
-                        <hotspotX>0.467999995</hotspotX>
-                        <hotspotY>0.479999989</hotspotY>
+                        <hotspotX>0.748000026</hotspotX>
+                        <hotspotY>1</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite3" uid="8">
+                <instance type="enemy4" uid="8">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -398,8 +398,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>928</x>
-                        <y>80</y>
+                        <x>926</x>
+                        <y>76</y>
                         <z>0</z>
                         <width>172</width>
                         <height>314</height>
@@ -410,7 +410,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite4" uid="12">
+                <instance type="enemy5" uid="12">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -432,7 +432,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>764</x>
+                        <x>1307</x>
                         <y>36</y>
                         <z>0</z>
                         <width>250</width>
@@ -444,7 +444,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite5" uid="13">
+                <instance type="enemy6" uid="13">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -466,8 +466,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>766</x>
-                        <y>317</y>
+                        <x>1299</x>
+                        <y>319</y>
                         <z>0</z>
                         <width>250</width>
                         <height>80</height>
