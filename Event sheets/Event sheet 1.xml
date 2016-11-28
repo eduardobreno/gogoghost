@@ -33,6 +33,17 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="509958155885255">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="161283142628948" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="779032828093090" type="System">
+                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="1" name="Value">dt</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="6384751921016593">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="310284521710728" type="System">
@@ -72,7 +83,10 @@
         <event-block sid="873792006417780">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="761172527312585" type="System">
-                    <param id="0" name="Interval (seconds)">random(10,20)</param>
+                    <param id="0" name="Interval (seconds)">random(2,10)</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="781575252966899" type="arvore">
+                    <param id="0" name="Object">Sprite3</param>
                 </condition>
             </conditions>
             <actions>
@@ -82,8 +96,56 @@
                     <param id="2" name="X">749</param>
                     <param id="3" name="Y">105</param>
                 </action>
-                <action id="-3" name="Create object" sid="591655349905581" type="System">
+            </actions>
+        </event-block>
+        <event-block sid="787129469973443">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="842861824552394" type="System">
+                    <param id="0" name="Interval (seconds)">random(0,8)</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="614610482158423" type="inimigo_baixo">
+                    <param id="0" name="Object">Sprite2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="509498490117794" type="System">
                     <param id="0" name="Object to create">inimigo_baixo</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">721</param>
+                    <param id="3" name="Y">216</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="808365816194359">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="818715701068047" type="System">
+                    <param id="0" name="Interval (seconds)">random(5,10)</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="827397163958767" type="Sprite2">
+                    <param id="0" name="Object">inimigo_baixo</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="423225456668870" type="System">
+                    <param id="0" name="Object to create">Sprite2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">721</param>
+                    <param id="3" name="Y">216</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="535529308171791">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="324063609220647" type="System">
+                    <param id="0" name="Interval (seconds)">random(6,12)</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="465816373922685" type="Sprite3">
+                    <param id="0" name="Object">arvore</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="410504338798019" type="System">
+                    <param id="0" name="Object to create">Sprite3</param>
                     <param id="1" name="Layer">1</param>
                     <param id="2" name="X">721</param>
                     <param id="3" name="Y">216</param>
@@ -127,6 +189,12 @@
                 </condition>
             </conditions>
             <actions>
+                <action disabled="1" id="-3" name="Create object" sid="507292397679153" type="System">
+                    <param id="0" name="Object to create">Sprite4</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">LayoutWidth+50</param>
+                    <param id="3" name="Y">351</param>
+                </action>
                 <action behavior="Bullet" id="5" name="Set enabled" sid="927153581506947" type="Sprite4">
                     <param id="0" name="State">1</param>
                 </action>
@@ -181,5 +249,81 @@
                 </action>
             </actions>
         </event-block>
+        <event-group description="" sid="431300566427559" title="Enemy">
+            <sub-events>
+                <event-block sid="461671519182774">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="248814455343470" type="Sprite4">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="331722977435250" type="Sprite4">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="301365507132404" type="Sprite4" />
+                    </actions>
+                </event-block>
+                <event-block sid="906215387780624">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="585916492319729" type="Sprite5">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-Self.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="653222879757594" type="Sprite5">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="496918477283378" type="Sprite5" />
+                    </actions>
+                </event-block>
+                <event-block sid="914792175387730">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="381135495091204" type="inimigo_baixo">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="652890815322018" type="inimigo_baixo" />
+                    </actions>
+                </event-block>
+                <event-block sid="495405239874272">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="701637086995590" type="arvore">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="119672637110490" type="arvore" />
+                    </actions>
+                </event-block>
+                <event-block sid="451555157770524">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="307014206674410" type="Sprite2">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="276760045023768" type="Sprite2" />
+                    </actions>
+                </event-block>
+                <event-block sid="155140562406218">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="279133916277150" type="inimigo_baixo">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="874478210964516" type="inimigo_baixo" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
