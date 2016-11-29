@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event Sheet 1</name>
     <events>
+        <variable constant="0" name="controlModUp" sid="935780021759402" static="0" type="number">-1</variable>
+        <variable constant="0" name="controlModDown" sid="694018988507409" static="0" type="number">1</variable>
         <variable constant="0" name="isStun" sid="160587575438588" static="0" type="number">0</variable>
         <variable constant="0" name="stunTime" sid="515563632378292" static="0" type="number">0</variable>
         <variable constant="0" name="timeOverTop" sid="510979960919460" static="0" type="number">0</variable>
@@ -10,7 +12,7 @@
         <variable constant="0" name="enemyNumber" sid="983265390928367" static="0" type="number">1</variable>
         <variable constant="0" name="distanceTotal" sid="950229511522870" static="0" type="number">0</variable>
         <variable constant="0" name="distanceCurrent" sid="806194228646459" static="0" type="number">0</variable>
-        <variable constant="0" name="next" sid="355647776413551" static="0" type="number">300</variable>
+        <variable constant="0" name="next" sid="355647776413551" static="0" type="number">500</variable>
         <event-group description="" sid="516573024662964" title="Game Manager">
             <sub-events>
                 <event-block sid="683259878049598">
@@ -76,7 +78,7 @@
                     </conditions>
                     <actions>
                         <action id="-2" name="Set Y" sid="296554847709164" type="Player">
-                            <param id="0" name="Y">Self.Y-3</param>
+                            <param id="0" name="Y">Self.Y+(3*controlModUp)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -86,7 +88,7 @@
                     </conditions>
                     <actions>
                         <action id="-2" name="Set Y" sid="602646806935395" type="Player">
-                            <param id="0" name="Y">Self.Y+3</param>
+                            <param id="0" name="Y">Self.Y+(3*controlModDown)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -125,6 +127,14 @@
                         <action id="-9" name="Set value" sid="174221280581679" type="System">
                             <param id="0" name="Variable">stunTime</param>
                             <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="378133070824043" type="System">
+                            <param id="0" name="Variable">controlModDown</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="366230558581741" type="System">
+                            <param id="0" name="Variable">controlModUp</param>
+                            <param id="1" name="Value">-1</param>
                         </action>
                         <action behavior="Sine" id="2" name="Set magnitude" sid="379517902829415" type="Player">
                             <param id="0" name="Magnitude">10</param>
@@ -183,7 +193,15 @@
                     </conditions>
                     <actions>
                         <action behavior="Sine" id="2" name="Set magnitude" sid="945227459819831" type="Player">
-                            <param id="0" name="Magnitude">60</param>
+                            <param id="0" name="Magnitude">20</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="104723998488510" type="System">
+                            <param id="0" name="Variable">controlModDown</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="969546679726481" type="System">
+                            <param id="0" name="Variable">controlModUp</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                         <action id="-9" name="Set value" sid="236904097546304" type="System">
                             <param id="0" name="Variable">isStun</param>
@@ -238,7 +256,7 @@
                         </action>
                         <action id="-9" name="Set value" sid="399334154435148" type="System">
                             <param id="0" name="Variable">next</param>
-                            <param id="1" name="Value">SpawnPoint.Width + 40 + random(500)</param>
+                            <param id="1" name="Value">SpawnPoint.Width + 50 + random(500)</param>
                         </action>
                         <action id="-9" name="Set value" sid="517555284076044" type="System">
                             <param id="0" name="Variable">enemyNumber</param>
@@ -255,10 +273,6 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action disabled="1" id="-9" name="Set value" sid="159347641515454" type="System">
-                                    <param id="0" name="Variable">next</param>
-                                    <param id="1" name="Value">enemy1.Width + 20 + random(600)</param>
-                                </action>
                                 <action id="-3" name="Create object" sid="650664366148956" type="System">
                                     <param id="0" name="Object to create">enemy1</param>
                                     <param id="1" name="Layer">1</param>
