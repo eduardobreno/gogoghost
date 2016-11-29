@@ -1,414 +1,481 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>Event sheet 1</name>
+    <name>Event Sheet 1</name>
     <events>
-        <variable constant="0" name="CurrentDistance" sid="794878642957199" static="0" type="number">0</variable>
-        <variable comment="The total distance flown so far, in pixels." constant="0" name="TotalDistance" sid="4015867643157149" static="0" type="number">0</variable>
-        <variable comment="The X co-ordinate where to create the next block" constant="0" name="NextBlockX" sid="5327114571015895" static="0" type="number">665</variable>
-        <variable constant="0" name="tempoOverBottom" sid="678939413889706" static="0" type="number">0</variable>
-        <variable constant="0" name="tempoOverTop" sid="524613058185703" static="0" type="number">0</variable>
-        <variable comment="The Y co-ordinate to slide the top block spawner to." constant="0" name="TopSpawnerTargetY" sid="3439610980831968" static="0" type="number">40</variable>
-        <variable comment="The Y co-ordinate to slide the bottom spawner to." constant="0" name="BottomSpawnerTargetY" sid="726966054651142" static="0" type="number">308</variable>
-        <comment>Make sure everything moves left across the screen (since the default 0 degrees is right)</comment>
-        <event-block sid="4183837126602792">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="955088681619798" type="System" />
-            </conditions>
-            <actions>
-                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2752486826635685" type="TiledBackground">
-                    <param id="0" name="Angle">180</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="4901695194915258">
-            <conditions>
-                <condition id="-1" name="Compare X" sid="243316901774439" type="TiledBackground">
-                    <param id="0" name="Comparison">3</param>
-                    <param id="1" name="X co-ordinate">-Self.Width / 2</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-1" name="Set X" sid="2179266091062072" type="TiledBackground">
-                    <param id="0" name="X">Self.X + Self.Width / 2</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="509958155885255">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="161283142628948" type="System" />
-            </conditions>
-            <actions>
-                <action id="-10" name="Add to" sid="779032828093090" type="System">
-                    <param id="0" name="Variable">TotalDistance</param>
-                    <param id="1" name="Value">dt</param>
-                </action>
-                <action id="-10" name="Add to" sid="343930068155906" type="System">
-                    <param id="0" name="Variable">CurrentDistance</param>
-                    <param id="1" name="Value">enemy1.Bullet.Speed*dt</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="6384751921016593">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="310284521710728" type="System">
-                    <param id="0" name="Interval (seconds)">0.25</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Set text" sid="9060271483953864" type="DistanceDisplay">
-                    <param id="0" name="Text">round(TotalDistance)</param>
-                </action>
-            </actions>
-        </event-block>
-        <comment>Make the player fall down unless we&apos;re touching the screen (or holding space), in which case accelerate them upwards.</comment>
-        <event-block any="1" sid="9234784188668333">
-            <conditions>
-                <condition id="2" name="Is in touch" sid="3949683883546242" type="Touch" />
-                <condition id="2" name="Key is down" sid="9858944201141429" type="Keyboard">
-                    <param id="0" name="Key">32 (Space)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-2" name="Set Y" sid="6722068397895388" type="Player">
-                    <param id="0" name="Y">Self.Y-3</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="3300314078748617">
-            <conditions>
-                <condition id="-22" name="Else" sid="6093573010861637" type="System" />
-            </conditions>
-            <actions>
-                <action id="-2" name="Set Y" sid="813877543297609" type="Player">
-                    <param id="0" name="Y">Self.Y+3</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="787129469973443">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="842861824552394" type="System">
-                    <param id="0" name="Interval (seconds)">choose(2,3,5)</param>
-                </condition>
-                <condition disabled="1" id="1" inverted="1" name="Is overlapping another object" sid="614610482158423" type="enemy1">
-                    <param id="0" name="Object">enemy2</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-3" name="Create object" sid="509498490117794" type="System">
-                    <param id="0" name="Object to create">enemy1</param>
-                    <param id="1" name="Layer">1</param>
-                    <param id="2" name="X">588</param>
-                    <param id="3" name="Y">359</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="808365816194359">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="818715701068047" type="System">
-                    <param id="0" name="Interval (seconds)">choose(2,3,5)</param>
-                </condition>
-                <condition disabled="1" id="1" inverted="1" name="Is overlapping another object" sid="827397163958767" type="enemy2">
-                    <param id="0" name="Object">enemy1</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-3" name="Create object" sid="423225456668870" type="System">
-                    <param id="0" name="Object to create">enemy2</param>
-                    <param id="1" name="Layer">1</param>
-                    <param id="2" name="X">750</param>
-                    <param id="3" name="Y">358</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block disabled="1" sid="873792006417780">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="761172527312585" type="System">
-                    <param id="0" name="Interval (seconds)">random(2,5)</param>
-                </condition>
-                <condition disabled="1" id="1" inverted="1" name="Is overlapping another object" sid="781575252966899" type="enemy3">
-                    <param id="0" name="Object">enemy4</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-3" name="Create object" sid="604032006011430" type="System">
-                    <param id="0" name="Object to create">enemy3</param>
-                    <param id="1" name="Layer">1</param>
-                    <param id="2" name="X">749</param>
-                    <param id="3" name="Y">105</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block disabled="1" sid="535529308171791">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="324063609220647" type="System">
-                    <param id="0" name="Interval (seconds)">random(2,5)</param>
-                </condition>
-                <condition id="1" inverted="1" name="Is overlapping another object" sid="465816373922685" type="enemy4">
-                    <param id="0" name="Object">enemy3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-3" name="Create object" sid="410504338798019" type="System">
-                    <param id="0" name="Object to create">enemy4</param>
-                    <param id="1" name="Layer">1</param>
-                    <param id="2" name="X">721</param>
-                    <param id="3" name="Y">216</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block disabled="1" sid="339935293100052">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="983400355092232" type="System">
-                    <param id="0" name="Interval (seconds)">3</param>
-                </condition>
-                <condition id="-9" name="Is visible" sid="905888907429890" type="enemy3" />
-                <condition id="-8" name="Compare two values" sid="766449251875594" type="System">
-                    <param id="0" name="First value">Player.x</param>
-                    <param id="1" name="Comparison">2</param>
-                    <param id="2" name="Second value">enemy3.X</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-3" name="Create object" sid="261548122904981" type="System">
-                    <param id="0" name="Object to create">tiro_arvore</param>
-                    <param id="1" name="Layer">1</param>
-                    <param id="2" name="X">enemy3.x</param>
-                    <param id="3" name="Y">enemy3.y</param>
-                </action>
-                <action id="-22" name="Set angle toward position" sid="869998237342898" type="tiro_arvore">
-                    <param id="0" name="X">Player.X</param>
-                    <param id="1" name="Y">Player.Y</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block disabled="1" sid="335934998270811">
-            <conditions>
-                <condition id="1" name="Is overlapping another object" sid="802770111382149" type="Player">
-                    <param id="0" name="Object">top</param>
-                </condition>
-                <condition id="-8" name="Compare two values" sid="126068661530310" type="System">
-                    <param id="0" name="First value">tempoOverTop</param>
-                    <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Second value">5</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-3" name="Create object" sid="507292397679153" type="System">
-                    <param id="0" name="Object to create">enemy5</param>
-                    <param id="1" name="Layer">1</param>
-                    <param id="2" name="X">enemy5.X</param>
-                    <param id="3" name="Y">enemy5.Y</param>
-                </action>
-                <action behavior="Bullet" id="5" name="Set enabled" sid="927153581506947" type="enemy5">
-                    <param id="0" name="State">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block disabled="1" sid="363435062773364">
-            <conditions>
-                <condition id="1" name="Is overlapping another object" sid="793398529584488" type="Player">
-                    <param id="0" name="Object">bottom</param>
-                </condition>
-                <condition id="-8" name="Compare two values" sid="151593771383143" type="System">
-                    <param id="0" name="First value">tempoOverBottom</param>
-                    <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Second value">5</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-3" name="Create object" sid="496038082740894" type="System">
-                    <param id="0" name="Object to create">enemy6</param>
-                    <param id="1" name="Layer">1</param>
-                    <param id="2" name="X">enemy6.X</param>
-                    <param id="3" name="Y">enemy6.Y</param>
-                </action>
-                <action behavior="Bullet" id="5" name="Set enabled" sid="552277422144862" type="enemy6">
-                    <param id="0" name="State">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="592720828891157">
-            <conditions>
-                <condition id="1" name="Is overlapping another object" sid="218181261599439" type="Player">
-                    <param id="0" name="Object">top</param>
-                </condition>
-                <condition id="-6" name="Every X seconds" sid="946867453042148" type="System">
-                    <param id="0" name="Interval (seconds)">1.0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-10" name="Add to" sid="565831561115028" type="System">
-                    <param id="0" name="Variable">tempoOverTop</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="307699041259605">
-            <conditions>
-                <condition id="1" inverted="1" name="Is overlapping another object" sid="470315296709327" type="Player">
-                    <param id="0" name="Object">top</param>
-                </condition>
-                <condition id="-6" name="Every X seconds" sid="918640824804998" type="System">
-                    <param id="0" name="Interval (seconds)">1.0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-11" name="Subtract from" sid="930898814286600" type="System">
-                    <param id="0" name="Variable">tempoOverTop</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="433644848355208">
-            <conditions>
-                <condition id="1" name="Is overlapping another object" sid="955987482221308" type="Player">
-                    <param id="0" name="Object">bottom</param>
-                </condition>
-                <condition id="-6" name="Every X seconds" sid="299147121573749" type="System">
-                    <param id="0" name="Interval (seconds)">1.0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-10" name="Add to" sid="888719403550671" type="System">
-                    <param id="0" name="Variable">tempoOverBottom</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="748580378778693">
-            <conditions>
-                <condition id="1" inverted="1" name="Is overlapping another object" sid="557876784248418" type="Player">
-                    <param id="0" name="Object">bottom</param>
-                </condition>
-                <condition id="-6" name="Every X seconds" sid="897090649248977" type="System">
-                    <param id="0" name="Interval (seconds)">1.0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-11" name="Subtract from" sid="284613234786380" type="System">
-                    <param id="0" name="Variable">tempoOverBottom</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-group description="" sid="431300566427559" title="Enemy">
+        <variable constant="0" name="timeOverTop" sid="510979960919460" static="0" type="number">0</variable>
+        <variable constant="0" name="timeOverBottom" sid="926528659528123" static="0" type="number">0</variable>
+        <variable constant="0" name="enemyNumber" sid="983265390928367" static="0" type="number">1</variable>
+        <variable constant="0" name="distanceTotal" sid="950229511522870" static="0" type="number">0</variable>
+        <variable constant="0" name="distanceCurrent" sid="806194228646459" static="0" type="number">0</variable>
+        <variable constant="0" name="next" sid="355647776413551" static="0" type="number">600</variable>
+        <event-group description="" sid="516573024662964" title="Game Manager">
             <sub-events>
-                <event-block sid="914792175387730">
+                <event-block sid="739793000043794">
                     <conditions>
-                        <condition id="-1" name="Compare X" sid="381135495091204" type="enemy1">
-                            <param id="0" name="Comparison">2</param>
-                            <param id="1" name="X co-ordinate">-Self.Width</param>
-                        </condition>
+                        <condition id="-2" name="On start of layout" sid="576657679973158" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="652890815322018" type="enemy1" />
-                    </actions>
-                </event-block>
-                <event-block sid="495405239874272">
-                    <conditions>
-                        <condition id="-1" name="Compare X" sid="701637086995590" type="enemy3">
-                            <param id="0" name="Comparison">2</param>
-                            <param id="1" name="X co-ordinate">-Self.Width</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="119672637110490" type="enemy3" />
-                    </actions>
-                </event-block>
-                <event-block sid="451555157770524">
-                    <conditions>
-                        <condition id="-1" name="Compare X" sid="307014206674410" type="enemy2">
-                            <param id="0" name="Comparison">2</param>
-                            <param id="1" name="X co-ordinate">-Self.Width</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="276760045023768" type="enemy2" />
-                    </actions>
-                </event-block>
-                <event-block sid="155140562406218">
-                    <conditions>
-                        <condition id="-1" name="Compare X" sid="279133916277150" type="enemy4">
-                            <param id="0" name="Comparison">2</param>
-                            <param id="1" name="X co-ordinate">-Self.Width</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="874478210964516" type="enemy4" />
-                    </actions>
-                </event-block>
-                <event-block sid="461671519182774">
-                    <conditions>
-                        <condition id="-1" name="Compare X" sid="248814455343470" type="enemy5">
-                            <param id="0" name="Comparison">2</param>
-                            <param id="1" name="X co-ordinate">-Self.Width</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="Bullet" id="5" name="Set enabled" sid="331722977435250" type="enemy5">
-                            <param id="0" name="State">0</param>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="813599749433352" type="TiledBackground">
+                            <param id="0" name="Angle">180</param>
                         </action>
-                        <action id="-9" name="Destroy" sid="301365507132404" type="enemy5" />
                     </actions>
                 </event-block>
-                <event-block sid="906215387780624">
+                <event-block sid="699432537921179">
                     <conditions>
-                        <condition id="-1" name="Compare X" sid="585916492319729" type="enemy6">
+                        <condition id="-1" name="Compare X" sid="483057643376159" type="TiledBackground">
                             <param id="0" name="Comparison">2</param>
-                            <param id="1" name="X co-ordinate">-Self.X</param>
+                            <param id="1" name="X co-ordinate">-Self.Width / 2</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Bullet" id="5" name="Set enabled" sid="653222879757594" type="enemy6">
-                            <param id="0" name="State">0</param>
+                        <action id="-1" name="Set X" sid="600868048157307" type="TiledBackground">
+                            <param id="0" name="X">Self.X + Self.Width / 2</param>
                         </action>
-                        <action id="-9" name="Destroy" sid="496918477283378" type="enemy6" />
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="111747250575274">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="745288636791255" type="System" />
-                <condition id="-8" name="Compare two values" sid="774468738483937" type="System">
-                    <param id="0" name="First value">tempoOverBottom</param>
-                    <param id="1" name="Comparison">2</param>
-                    <param id="2" name="Second value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="101806616181519" type="System">
-                    <param id="0" name="Variable">tempoOverBottom</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="328485451169702">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="964179033694338" type="System" />
-                <condition id="-8" name="Compare two values" sid="916782597774010" type="System">
-                    <param id="0" name="First value">tempoOverTop</param>
-                    <param id="1" name="Comparison">2</param>
-                    <param id="2" name="Second value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="965553123580756" type="System">
-                    <param id="0" name="Variable">tempoOverTop</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="415230398688226">
-            <conditions>
-                <condition id="-8" name="Compare two values" sid="494953786061630" type="System">
-                    <param id="0" name="First value">currentDistance%2</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Second value">0</param>
-                </condition>
-            </conditions>
-            <actions />
-        </event-block>
+        <event-group description="" sid="918856143273973" title="PlayerControl">
+            <sub-events>
+                <event-block any="1" sid="886257781927085">
+                    <conditions>
+                        <condition id="2" name="Is in touch" sid="949920223464424" type="Touch" />
+                        <condition id="2" name="Key is down" sid="851268930663236" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="296554847709164" type="Player">
+                            <param id="0" name="Y">Self.Y-3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="759215537077420">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="169991157164402" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="602646806935395" type="Player">
+                            <param id="0" name="Y">Self.Y+3</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="886606405684888" title="SpawnPoint">
+            <sub-events>
+                <event-block sid="683259878049598">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="222918469363989" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="124486526655998" type="System">
+                            <param id="0" name="Variable">distanceCurrent</param>
+                            <param id="1" name="Value">SpawnPoint.Bullet.Speed*dt</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="448935942364535" type="System">
+                            <param id="0" name="Variable">distanceTotal</param>
+                            <param id="1" name="Value">SpawnPoint.Bullet.Speed*dt</param>
+                        </action>
+                        <action id="0" name="Set text" sid="396447993313360" type="DistanceDisplay">
+                            <param id="0" name="Text">round(distanceTotal)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="868225732731210">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="127955825017096" type="System">
+                            <param id="0" name="First value">distanceCurrent</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">next</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="844355886023505" type="System">
+                            <param id="0" name="Variable">distanceCurrent</param>
+                            <param id="1" name="Value">next</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="892359975124606" type="System">
+                            <param id="0" name="Object to create">SpawnPoint</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">588</param>
+                            <param id="3" name="Y">359</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="399334154435148" type="System">
+                            <param id="0" name="Variable">next</param>
+                            <param id="1" name="Value">SpawnPoint.Width + 40 + random(500)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="517555284076044" type="System">
+                            <param id="0" name="Variable">enemyNumber</param>
+                            <param id="1" name="Value">round(random(1,4))</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="531041624715158">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="608160501075459" type="System">
+                                    <param id="0" name="First value">enemyNumber</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="-9" name="Set value" sid="159347641515454" type="System">
+                                    <param id="0" name="Variable">next</param>
+                                    <param id="1" name="Value">enemy1.Width + 20 + random(600)</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="650664366148956" type="System">
+                                    <param id="0" name="Object to create">enemy1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">SpawnPoint.X</param>
+                                    <param id="3" name="Y">SpawnPoint.Y</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="722024473498829" type="enemy1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="661471089053202">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="716150903245537" type="System" />
+                                <condition id="-8" name="Compare two values" sid="938482184399491" type="System">
+                                    <param id="0" name="First value">enemyNumber</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="178790863821278" type="System">
+                                    <param id="0" name="Object to create">enemy2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">SpawnPoint.X</param>
+                                    <param id="3" name="Y">SpawnPoint.Y</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="450094781649447" type="enemy2">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="648239389388299">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="179242154585712" type="System" />
+                                <condition id="-8" name="Compare two values" sid="893707973672694" type="System">
+                                    <param id="0" name="First value">enemyNumber</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="577742714505371" type="System">
+                                    <param id="0" name="Object to create">enemy3</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">SpawnPoint.X</param>
+                                    <param id="3" name="Y">SpawnPoint.Y</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="891669698726750" type="enemy3">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="748837926756172">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="486984228156996" type="System">
+                                            <param id="0" name="Interval (seconds)">2</param>
+                                        </condition>
+                                        <condition disabled="1" id="-9" name="Is visible" sid="828291059928826" type="enemy3" />
+                                        <condition id="-8" name="Compare two values" sid="940827821189460" type="System">
+                                            <param id="0" name="First value">Player.x</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">enemy3.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="266396245338855" type="System">
+                                            <param id="0" name="Object to create">tiro_arvore</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="X">enemy3.ImagePointX(&quot;bulletPoint&quot;)</param>
+                                            <param id="3" name="Y">enemy3.ImagePointY(&quot;bulletPoint&quot;)</param>
+                                        </action>
+                                        <action id="-22" name="Set angle toward position" sid="241663517424989" type="tiro_arvore">
+                                            <param id="0" name="X">Player.X</param>
+                                            <param id="1" name="Y">Player.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="555743442873540">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="304668883047837" type="System" />
+                                <condition id="-8" name="Compare two values" sid="548037053131230" type="System">
+                                    <param id="0" name="First value">enemyNumber</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="930465917705155" type="System">
+                                    <param id="0" name="Object to create">enemy4</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">SpawnPoint.X</param>
+                                    <param id="3" name="Y">SpawnPoint.Y</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="591197456097895" type="enemy4">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="723938484313211" title="EnemyTopScreen">
+            <sub-events>
+                <event-block sid="115405105834171">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="381416027386163" type="Player">
+                            <param id="0" name="Object">top</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="351092907766407" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="545524441336290" type="System">
+                            <param id="0" name="Variable">timeOverTop</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="892735057122497">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="221836423819721" type="Player">
+                            <param id="0" name="Object">top</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="406280580539313" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="366627358533851" type="System">
+                            <param id="0" name="Variable">timeOverTop</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="202365227844791">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="525500406013158" type="System" />
+                        <condition id="-8" name="Compare two values" sid="681239683194118" type="System">
+                            <param id="0" name="First value">timeOverTop</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="679882460686792" type="System">
+                            <param id="0" name="Variable">timeOverTop</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="721797064205433">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="402635779111063" type="Player">
+                            <param id="0" name="Object">top</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="960615640346122" type="System">
+                            <param id="0" name="First value">timeOverTop</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">5</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="992390290079367" type="System">
+                            <param id="0" name="First value">enemy5.Count</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="315227947133471" type="System">
+                            <param id="0" name="Object to create">enemy5</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">enemy5.X</param>
+                            <param id="3" name="Y">enemy5.Y</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="408709888302875" type="enemy5">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="948878900709705">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="947072860102810" type="enemy5">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-Self.Width-enemy5.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="802176162182550" type="enemy5">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="297249285390883" type="enemy5" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="551530807622212" title="EnemyBottomScreen">
+            <sub-events>
+                <event-block sid="275006057142671">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="682809465254959" type="Player">
+                            <param id="0" name="Object">bottom</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="257301462969938" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="278131500656108" type="System">
+                            <param id="0" name="Variable">timeOverBottom</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="850534548245787">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="928147495125647" type="Player">
+                            <param id="0" name="Object">bottom</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="550398958634486" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="736752245580450" type="System">
+                            <param id="0" name="Variable">timeOverBottom</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="538995912138591">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="972556599852441" type="System" />
+                        <condition id="-8" name="Compare two values" sid="304154793819142" type="System">
+                            <param id="0" name="First value">timeOverBottom</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="887532003916493" type="System">
+                            <param id="0" name="Variable">timeOverBottom</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="896094773179723">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="154751456169242" type="Player">
+                            <param id="0" name="Object">bottom</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="882697354241087" type="System">
+                            <param id="0" name="First value">timeOverBottom</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">5</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="502250772634070" type="System">
+                            <param id="0" name="First value">enemy6.Count</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="344067952238163" type="System">
+                            <param id="0" name="Object to create">enemy6</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">enemy6.X</param>
+                            <param id="3" name="Y">enemy6.Y</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="574758514113582" type="enemy6">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="443529870531552">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="218972390141553" type="enemy6">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-Self.X-enemy6.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="308945129744289" type="enemy6">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="214149064969305" type="enemy6" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="200537334027187" title="Destroy">
+            <sub-events>
+                <event-block sid="736529610131239">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="181771219401092" type="SpawnPoint">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="182187085486600" type="SpawnPoint" />
+                    </actions>
+                </event-block>
+                <event-block sid="316028010869975">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="382335306479653" type="enemy1">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="933485722506247" type="enemy1" />
+                    </actions>
+                </event-block>
+                <event-block sid="282742253015715">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="809034200899815" type="enemy2">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="490911040115531" type="enemy2" />
+                    </actions>
+                </event-block>
+                <event-block sid="318168172361112">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="248499601790528" type="enemy3">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="214008962936834" type="enemy3" />
+                    </actions>
+                </event-block>
+                <event-block sid="250683701652374">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="813238084336081" type="enemy4">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="754563751428494" type="enemy4" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

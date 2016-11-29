@@ -122,7 +122,8 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="199416113616132" speed="5">
-                    <frame duration="1" hotspotX="0.458333" hotspotY="0.230159">
+                    <frame duration="1" hotspotX="0.486111" hotspotY="1">
+                        <image-point name="bulletPoint" x="0.416667" y="0.218254" />
                         <collision-poly>
                             <point x="0.0416667" y="0.130952" />
                             <point x="0.763889" y="0.130952" />
@@ -326,7 +327,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="674334752267278" speed="5">
-                    <frame duration="1" hotspotX="0.484" hotspotY="0.104">
+                    <frame duration="1" hotspotX="0.48" hotspotY="0.996">
                         <collision-poly>
                             <point x="0" y="0.196" />
                             <point x="0.444" y="0.08" />
@@ -334,7 +335,7 @@
                             <point x="0.196" y="0.567999" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.492" hotspotY="0.124">
+                    <frame duration="1" hotspotX="0.484" hotspotY="1">
                         <collision-poly>
                             <point x="0.46" y="0.092" />
                             <point x="0.42" y="0.78" />
@@ -354,7 +355,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="233282524353326" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.488889" hotspotY="0" original-source="C:\Users\Aecio\Pictures\000.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -367,7 +368,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="644654858760577" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.497537" hotspotY="1" original-source="C:\Users\Aecio\Pictures\8923_original.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -387,13 +388,26 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="SpawnPoint" sid="566389230307289">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="837303034308904">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="299565847034992" speed="5">
+                    <frame duration="1" hotspotX="0.476" hotspotY="0.464" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Event Sheet 1.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="4">
