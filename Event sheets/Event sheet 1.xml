@@ -3,14 +3,43 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event Sheet 1</name>
     <events>
+        <variable constant="0" name="isStun" sid="160587575438588" static="0" type="number">0</variable>
+        <variable constant="0" name="stunTime" sid="515563632378292" static="0" type="number">0</variable>
         <variable constant="0" name="timeOverTop" sid="510979960919460" static="0" type="number">0</variable>
         <variable constant="0" name="timeOverBottom" sid="926528659528123" static="0" type="number">0</variable>
         <variable constant="0" name="enemyNumber" sid="983265390928367" static="0" type="number">1</variable>
         <variable constant="0" name="distanceTotal" sid="950229511522870" static="0" type="number">0</variable>
         <variable constant="0" name="distanceCurrent" sid="806194228646459" static="0" type="number">0</variable>
-        <variable constant="0" name="next" sid="355647776413551" static="0" type="number">600</variable>
+        <variable constant="0" name="next" sid="355647776413551" static="0" type="number">300</variable>
         <event-group description="" sid="516573024662964" title="Game Manager">
             <sub-events>
+                <event-block sid="683259878049598">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="222918469363989" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="124486526655998" type="System">
+                            <param id="0" name="Variable">distanceCurrent</param>
+                            <param id="1" name="Value">SpawnPoint.Bullet.Speed*dt</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="448935942364535" type="System">
+                            <param id="0" name="Variable">distanceTotal</param>
+                            <param id="1" name="Value">SpawnPoint.Bullet.Speed*dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="581368968716108">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="888884257037001" type="System">
+                            <param id="0" name="Interval (seconds)">0.25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="396447993313360" type="DistanceDisplay">
+                            <param id="0" name="Text">round(distanceTotal)</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="739793000043794">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="576657679973158" type="System" />
@@ -36,7 +65,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="918856143273973" title="PlayerControl">
+        <event-group description="" sid="918856143273973" title="Player">
             <sub-events>
                 <event-block any="1" sid="886257781927085">
                     <conditions>
@@ -61,28 +90,133 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="528332667343796">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="382446996821925" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="941112293837166" type="System">
+                            <param id="0" name="First value">isStun</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="951594520017051" type="System">
+                            <param id="0" name="Variable">stunTime</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="589976093285545">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="519915371587273" type="System" />
+                        <condition id="-8" name="Compare two values" sid="678948364943653" type="System">
+                            <param id="0" name="First value">stunTime</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">8</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="815022237901589" type="System">
+                            <param id="0" name="Variable">isStun</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="174221280581679" type="System">
+                            <param id="0" name="Variable">stunTime</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Sine" id="2" name="Set magnitude" sid="379517902829415" type="Player">
+                            <param id="0" name="Magnitude">10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="497863756647689">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="388220875438965" type="Player">
+                            <param id="0" name="Object">enemy1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="196032432649544" type="System" />
+                        <action id="-26" name="Restart layout" sid="809947961400565" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="358632739045343">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="635453272126866" type="Player">
+                            <param id="0" name="Object">enemy2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="749760902890563" type="System" />
+                        <action id="-26" name="Restart layout" sid="273722314675730" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="394987364997820">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="403137214008296" type="Player">
+                            <param id="0" name="Object">enemy3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="551696426481227" type="System" />
+                        <action id="-26" name="Restart layout" sid="166777461942443" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="348473933708393">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="102824446248286" type="Player">
+                            <param id="0" name="Object">tiro_arvore</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="530433726396940" type="System" />
+                        <action id="-26" name="Restart layout" sid="346531832269256" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="628073082891432">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="756672953362595" type="Player">
+                            <param id="0" name="Object">enemy4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Sine" id="2" name="Set magnitude" sid="945227459819831" type="Player">
+                            <param id="0" name="Magnitude">60</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="236904097546304" type="System">
+                            <param id="0" name="Variable">isStun</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="359568158355528">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="429631031208103" type="Player">
+                            <param id="0" name="Object">enemy5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="120210888211751" type="System" />
+                        <action id="-26" name="Restart layout" sid="626712396764193" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="872380704353505">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="763725994143822" type="Player">
+                            <param id="0" name="Object">enemy6</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="116102413977913" type="System" />
+                        <action id="-26" name="Restart layout" sid="987355353816393" type="System" />
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="886606405684888" title="SpawnPoint">
             <sub-events>
-                <event-block sid="683259878049598">
-                    <conditions>
-                        <condition id="-1" name="Every tick" sid="222918469363989" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Add to" sid="124486526655998" type="System">
-                            <param id="0" name="Variable">distanceCurrent</param>
-                            <param id="1" name="Value">SpawnPoint.Bullet.Speed*dt</param>
-                        </action>
-                        <action id="-10" name="Add to" sid="448935942364535" type="System">
-                            <param id="0" name="Variable">distanceTotal</param>
-                            <param id="1" name="Value">SpawnPoint.Bullet.Speed*dt</param>
-                        </action>
-                        <action id="0" name="Set text" sid="396447993313360" type="DistanceDisplay">
-                            <param id="0" name="Text">round(distanceTotal)</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="868225732731210">
                     <conditions>
                         <condition id="-8" name="Compare two values" sid="127955825017096" type="System">

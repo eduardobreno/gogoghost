@@ -210,6 +210,11 @@
                                 <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -432,11 +437,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>997</x>
+                        <x>963.266662598</x>
                         <y>2</y>
                         <z>0</z>
-                        <width>173</width>
-                        <height>84</height>
+                        <width>104</width>
+                        <height>52</height>
                         <depth>0</depth>
                         <hotspotX>0.48888889</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -466,11 +471,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>999</x>
+                        <x>963.674865723</x>
                         <y>360</y>
                         <z>0</z>
-                        <width>215</width>
-                        <height>68</height>
+                        <width>144</width>
+                        <height>45</height>
                         <depth>0</depth>
                         <hotspotX>0.497536957</hotspotX>
                         <hotspotY>1</hotspotY>
