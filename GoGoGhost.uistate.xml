@@ -16,12 +16,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <properties>
         <property expanded="1" name="About" />
         <property expanded="1" name="Project settings" />
-        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Window Size" />
         <property expanded="1" name="Configuration Settings" />
     </properties>
     <families-expanded root="1" />
     <folders-expanded>
-        <folder expanded="1" path="object-folder/" />
+        <folder expanded="0" path="object-folder/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
@@ -40,5 +40,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/top/" />
         <folder expanded="1" path="animation-folder/bottom/" />
         <folder expanded="1" path="animation-folder/SpawnPoint/" />
+        <folder expanded="1" path="animation-folder/background/" />
+        <folder expanded="1" path="animation-folder/Sprite2/" />
     </folders-expanded>
 </c2uistate>

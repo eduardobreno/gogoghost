@@ -10,6 +10,7 @@
     <unique-id>mq4njje893h0</unique-id>
     <saved-with-version>23900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -29,8 +30,8 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>630</width>
-        <height>360</height>
+        <width>1280</width>
+        <height>720</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
@@ -72,19 +73,11 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1778368724533726" speed="5">
-                    <frame duration="1" hotspotX="0.490196" hotspotY="0.527778">
-                        <collision-poly>
-                            <point x="0.901961" y="0.138889" />
-                            <point x="1" y="0.5" />
-                            <point x="0.901961" y="0.861111" />
-                            <point x="0.509804" y="0.916667" />
-                            <point x="0.117647" y="0.833333" />
-                            <point x="0.0392157" y="0.5" />
-                            <point x="0.117647" y="0.166667" />
-                            <point x="0.509804" y="0.0833333" />
-                        </collision-poly>
-                    </frame>
+                <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="2" sid="1778368724533726" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.509615" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Restante_das_imagens_(sprites)\ghost1-58.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.586538" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Restante_das_imagens_(sprites)\ghost1-59.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.509615" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Restante_das_imagens_(sprites)\ghost1-60.png" />
+                    <frame duration="1" hotspotX="0.495495" hotspotY="0.5" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Restante_das_imagens_(sprites)\supernatural_insp-71.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -121,14 +114,23 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="199416113616132" speed="5">
-                    <frame duration="1" hotspotX="0.486111" hotspotY="1">
-                        <image-point name="bulletPoint" x="0.416667" y="0.218254" />
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="199416113616132" speed="5">
+                    <frame duration="1" hotspotX="0.498795" hotspotY="1">
+                        <image-point name="Imagepoint 1" x="0.0192771" y="0.518293" />
                         <collision-poly>
-                            <point x="0.0416667" y="0.130952" />
-                            <point x="0.763889" y="0.130952" />
-                            <point x="0.75" y="0.345237" />
-                            <point x="0.0833333" y="0.349206" />
+                            <point x="0.00963851" y="0.5" />
+                            <point x="0.301205" y="0.495427" />
+                            <point x="0.306024" y="0.539634" />
+                            <point x="0.0144578" y="0.545732" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498795" hotspotY="1">
+                        <image-point name="Imagepoint 1" x="0.0192771" y="0.52439" />
+                        <collision-poly>
+                            <point x="0.00963851" y="0.5" />
+                            <point x="0.301205" y="0.495427" />
+                            <point x="0.306024" y="0.539634" />
+                            <point x="0.0144578" y="0.545732" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -293,30 +295,12 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="180699168504373" speed="5">
-                    <frame duration="1" hotspotX="0.748" hotspotY="1">
-                        <collision-poly>
-                            <point x="0.552" y="0.808" />
-                            <point x="0.56" y="0.764" />
-                            <point x="0.804" y="0.78" />
-                            <point x="0.783999" y="0.888" />
-                        </collision-poly>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="180699168504373" speed="5">
+                    <frame duration="1" hotspotX="0.49345" hotspotY="0.996633">
+                        <image-point name="Imagepoint 1" x="0.0436681" y="0.444444" />
                     </frame>
-                    <frame duration="1" hotspotX="0.752" hotspotY="1">
-                        <collision-poly>
-                            <point x="0.188" y="0.016" />
-                            <point x="0.691999" y="0.484" />
-                            <point x="0.636" y="0.848" />
-                            <point x="0" y="0.395999" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.744" hotspotY="0.996">
-                        <collision-poly>
-                            <point x="0.572" y="0.752" />
-                            <point x="0.772" y="0.796" />
-                            <point x="0.755999" y="0.888" />
-                            <point x="0.528" y="0.816" />
-                        </collision-poly>
+                    <frame duration="1" hotspotX="0.491304" hotspotY="0.983389">
+                        <image-point name="Imagepoint 1" x="0.104348" y="0.431894" />
                     </frame>
                 </animation>
             </animation-folder>
@@ -380,16 +364,16 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="644654858760577" speed="5">
-                    <frame duration="1" hotspotX="0.497537" hotspotY="1" original-source="C:\Users\Aecio\Pictures\8923_original.png">
+                    <frame duration="1" hotspotX="0.501266" hotspotY="1" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Restante_das_imagens_(sprites)\supernatural_insp-70.png">
                         <collision-poly>
-                            <point x="0.00123153" y="0.360656" />
-                            <point x="0.491379" y="0" />
-                            <point x="0.637931" y="0" />
-                            <point x="0.997537" y="0.434426" />
-                            <point x="0.998768" y="0.70082" />
-                            <point x="0.765394" y="0.995902" />
-                            <point x="0.139163" y="1" />
-                            <point x="0.000615764" y="0.680328" />
+                            <point x="0.999384" y="0.680328" />
+                            <point x="0.860837" y="1" />
+                            <point x="0.234606" y="0.995902" />
+                            <point x="0.00123203" y="0.70082" />
+                            <point x="0.00246298" y="0.434426" />
+                            <point x="0.362069" y="0" />
+                            <point x="0.508621" y="0" />
+                            <point x="0.998768" y="0.360656" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -424,6 +408,99 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="background" sid="353913617685049">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="550482452156263">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="784274818694612">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="58" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="982105957544180" speed="2">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-01.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-02.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-03.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-04.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-05.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-06.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-07.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-08.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-09.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-10.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-11.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-12.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-13.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-14.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-15.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-16.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-17.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-18.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-19.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-20.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-21.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-22.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-23.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-24.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-25.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-26.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-27.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-28.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-29.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-30.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-31.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-32.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-33.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-34.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-35.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-36.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-37.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-38.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-39.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-40.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-41.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-42.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-43.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-44.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-45.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-46.png" />
+                    <frame duration="1" hotspotX="-0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-47.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-48.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-49.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-50.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-51.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-52.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-53.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-54.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-55.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-56.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Cenário_(fundo)\gogoghoster_cenario-57.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500829" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="212336001777296">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="370658368717053" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Audio" sid="124188919515832">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="tld_casas" sid="695187851808657">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="572710315906422">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Restante_das_imagens_(sprites)\cenário2-69.png" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -439,8 +516,29 @@
             </properties>
         </global-instance>
         <global-instance type="Keyboard" uid="5" />
+        <global-instance type="Audio" uid="19">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
     </global-instances>
-    <sounds-folder />
+    <sounds-folder>
+        <file name="Mystery_Skulls_-_Ghost_8-Bit.m4a" />
+        <file name="Mystery_Skulls_-_Ghost_8-Bit.ogg" />
+        <file name="35685__jobro__laser8.m4a" />
+        <file name="35685__jobro__laser8.ogg" />
+        <file name="vehicle002_converted.m4a" />
+        <file name="vehicle002.ogg" />
+    </sounds-folder>
     <music-folder />
     <files-folder>
         <file-folder name="Icons">
