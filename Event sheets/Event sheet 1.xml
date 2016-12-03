@@ -18,6 +18,7 @@
         <variable constant="0" name="isDead" sid="749614394262193" static="0" type="number">0</variable>
         <variable constant="0" name="powerUp" sid="567560124219550" static="0" type="number">0</variable>
         <variable constant="0" name="speedGame" sid="326471574431371" static="0" type="number">-200</variable>
+        <variable constant="0" name="fantasma_pac" sid="592252175682076" static="0" type="number">0</variable>
         <variable constant="0" name="next" sid="355647776413551" static="0" type="number">500</variable>
         <event-group description="" sid="516573024662964" title="Game Manager">
             <sub-events>
@@ -393,6 +394,10 @@
                             <param id="0" name="Variable">powerUp</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="-9" name="Set value" sid="532952549849309" type="System">
+                            <param id="0" name="Variable">playerFrame</param>
+                            <param id="1" name="Value">4</param>
+                        </action>
                         <action id="0" name="Play" sid="948818432393941" type="Audio">
                             <param id="0" name="Audio file">Pickup_00</param>
                             <param id="2" name="Loop">0</param>
@@ -402,6 +407,37 @@
                         <action id="-9" name="Destroy" sid="751998850268342" type="jetpack" />
                         <action id="-13" name="Set time scale" sid="703071055979121" type="System">
                             <param id="0" name="Time scale">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="307746656775668">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="703326479006684" type="Player">
+                            <param id="0" name="Object">pizza</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="236903040131012" type="System">
+                            <param id="0" name="Variable">powerUp</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="268431601125257" type="System">
+                            <param id="0" name="Variable">playerFrame</param>
+                            <param id="1" name="Value">6</param>
+                        </action>
+                        <action id="0" name="Play" sid="306612779367453" type="Audio">
+                            <param id="0" name="Audio file">Pickup_00</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="147570575538126" type="pizza" />
+                        <action id="-16" name="Wait" sid="437237520470921" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="715175075718079" type="System">
+                            <param id="0" name="Variable">fantasma_pac</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -421,6 +457,11 @@
                         </condition>
                         <condition id="-6" name="Every X seconds" sid="124962874574728" type="System">
                             <param id="0" name="Interval (seconds)">2</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="394277866933657" type="System">
+                            <param id="0" name="First value">powerUp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -450,10 +491,15 @@
                         </condition>
                         <condition id="-1" name="Compare X" sid="778458735371637" type="enemy3">
                             <param id="0" name="Comparison">4</param>
-                            <param id="1" name="X co-ordinate">Player.X+300</param>
+                            <param id="1" name="X co-ordinate">Player.X+400</param>
                         </condition>
                         <condition id="-6" name="Every X seconds" sid="486984228156996" type="System">
                             <param id="0" name="Interval (seconds)">1.8</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="109537400248545" type="System">
+                            <param id="0" name="First value">powerUp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -622,6 +668,11 @@
                         <condition id="-6" name="Every X seconds" sid="351092907766407" type="System">
                             <param id="0" name="Interval (seconds)">1.0</param>
                         </condition>
+                        <condition id="-8" name="Compare two values" sid="640995640908354" type="System">
+                            <param id="0" name="First value">powerUp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-10" name="Add to" sid="545524441336290" type="System">
@@ -676,6 +727,11 @@
                             <param id="0" name="First value">enemy5.Count</param>
                             <param id="1" name="Comparison">3</param>
                             <param id="2" name="Second value">1</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="320025058653795" type="System">
+                            <param id="0" name="First value">powerUp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -771,6 +827,11 @@
                             <param id="1" name="Comparison">3</param>
                             <param id="2" name="Second value">1</param>
                         </condition>
+                        <condition id="-8" name="Compare two values" sid="106227830238876" type="System">
+                            <param id="0" name="First value">powerUp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-3" name="Create object" sid="344067952238163" type="System">
@@ -782,7 +843,7 @@
                         <action behavior="Bullet" id="5" name="Set enabled" sid="574758514113582" type="enemy6">
                             <param id="0" name="State">1</param>
                         </action>
-                        <action id="0" name="Play" sid="720747699350579" type="Audio">
+                        <action disabled="1" id="0" name="Play" sid="720747699350579" type="Audio">
                             <param id="0" name="Audio file">vehicle002</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">0</param>
@@ -802,7 +863,7 @@
                             <param id="0" name="State">0</param>
                         </action>
                         <action id="-9" name="Destroy" sid="214149064969305" type="enemy6" />
-                        <action id="6" name="Stop" sid="139761529616164" type="Audio">
+                        <action disabled="1" id="6" name="Stop" sid="139761529616164" type="Audio">
                             <param id="0" name="Tag">&quot;carro&quot;</param>
                         </action>
                     </actions>
@@ -882,108 +943,93 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block disabled="1" sid="259543086281336">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="745740642463151" type="System" />
-            </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="623411819954273" type="System">
-                    <param id="0" name="Variable">currentFrameBackground</param>
-                    <param id="1" name="Value">background.AnimationFrame</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block disabled="1" sid="474216623690768">
-            <conditions>
-                <condition id="-8" name="Compare two values" sid="808235524697961" type="System">
-                    <param id="0" name="First value">canCreateBack</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Second value">1</param>
-                </condition>
-                <condition id="-1" name="Every tick" sid="746199313702808" type="System" />
-            </conditions>
-            <actions>
-                <action id="-3" name="Create object" sid="304368383314028" type="System">
-                    <param id="0" name="Object to create">background</param>
-                    <param id="1" name="Layer">0</param>
-                    <param id="2" name="X">1280</param>
-                    <param id="3" name="Y">0</param>
-                </action>
-                <action id="5" name="Set frame" sid="542020240147732" type="background">
-                    <param id="0" name="Frame number">currentFrameBackground</param>
-                </action>
-                <action id="-9" name="Set value" sid="486988226755874" type="System">
-                    <param id="0" name="Variable">canCreateBack</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block disabled="1" sid="931316071757443">
-            <conditions>
-                <condition id="-4" name="Is outside layout" sid="294695444299320" type="background" />
-            </conditions>
-            <actions>
-                <action id="5" name="Set frame" sid="452728854633596" type="background">
-                    <param id="0" name="Frame number">currentFrameBackground</param>
-                </action>
-                <action id="-9" name="Set value" sid="731847227172164" type="System">
-                    <param id="0" name="Variable">canCreateBack</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
         <event-group description="" sid="699413046230273" title="AnimationPlayer">
             <sub-events>
                 <event-group description="" sid="327241945427763" title="PowerUp1">
                     <sub-events>
-                        <event-block sid="835489985175995">
+                        <event-block sid="832817240519783">
                             <conditions>
-                                <condition id="-6" name="Every X seconds" sid="573765525366126" type="System">
-                                    <param id="0" name="Interval (seconds)">0.3</param>
+                                <condition id="-8" name="Compare two values" sid="576582992353096" type="System">
+                                    <param id="0" name="First value">powerUp</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
                                 </condition>
-                                <condition id="-8" name="Compare two values" sid="778272994022664" type="System">
-                                    <param id="0" name="First value">isDead</param>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="835489985175995">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="573765525366126" type="System">
+                                            <param id="0" name="Interval (seconds)">0.4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="928335389773328" type="Player">
+                                            <param id="0" name="Frame number">4</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="437286668112721" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="167254244560508" type="Player">
+                                            <param id="0" name="Frame number">5</param>
+                                        </action>
+                                        <action id="-24" name="Move to top" sid="630408385099061" type="Player" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="961581764078202" title="PowerUp2">
+                    <sub-events>
+                        <event-block sid="994364830247212">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="255813444481274" type="System">
+                                    <param id="0" name="First value">powerUp</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="548595710304204" type="System">
+                                    <param id="0" name="First value">fantasma_pac</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">0</param>
                                 </condition>
-                                <condition id="-8" name="Compare two values" sid="183564386766327" type="System">
-                                    <param id="0" name="First value">powerUp</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">1</param>
-                                </condition>
                             </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="934035417849518" type="System">
-                                    <param id="0" name="Variable">playerFrame</param>
-                                    <param id="1" name="Value">4</param>
-                                </action>
-                                <action id="5" name="Set frame" sid="928335389773328" type="Player">
-                                    <param id="0" name="Frame number">4</param>
-                                </action>
-                                <action id="-10" name="Add to" sid="164037133436184" type="System">
-                                    <param id="0" name="Variable">playerFrame</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-24" name="Move to top" sid="159701815167139" type="Player" />
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="256797355749012">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="697870882051473" type="System">
+                                            <param id="0" name="Interval (seconds)">0.3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="782204228609729" type="Player">
+                                            <param id="0" name="Frame number">6</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="431352296736027" type="System">
+                                            <param id="0" name="Seconds">0.2</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="818235061246832" type="Player">
+                                            <param id="0" name="Frame number">7</param>
+                                        </action>
+                                        <action id="-24" name="Move to top" sid="803381570360523" type="Player" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
-                        <event-block sid="125831090705577">
+                        <event-block sid="740208194973960">
                             <conditions>
-                                <condition id="-8" name="Compare two values" sid="497082720648241" type="System">
-                                    <param id="0" name="First value">playerFrame</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">5</param>
-                                </condition>
-                                <condition id="-8" name="Compare two values" sid="787859252793991" type="System">
+                                <condition id="-22" name="Else" sid="324811856728772" type="System" />
+                                <condition id="-8" name="Compare two values" sid="439291867794277" type="System">
                                     <param id="0" name="First value">powerUp</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">1</param>
+                                    <param id="2" name="Second value">2</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Set value" sid="917750712513514" type="System">
-                                    <param id="0" name="Variable">playerFrame</param>
-                                    <param id="1" name="Value">4</param>
+                                <action id="5" name="Set frame" sid="394338030547200" type="Player">
+                                    <param id="0" name="Frame number">8</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -991,56 +1037,47 @@
                 </event-group>
                 <event-group description="" sid="134404257503633" title="Normal">
                     <sub-events>
-                        <event-block sid="375521077876502">
+                        <event-block sid="833997003212839">
                             <conditions>
-                                <condition id="-6" name="Every X seconds" sid="594267945390732" type="System">
-                                    <param id="0" name="Interval (seconds)">0.3</param>
-                                </condition>
-                                <condition id="-8" name="Compare two values" sid="248254130063000" type="System">
-                                    <param id="0" name="First value">isDead</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">0</param>
-                                </condition>
-                                <condition id="-8" name="Compare two values" sid="639679204402476" type="System">
+                                <condition id="-8" name="Compare two values" sid="105648855609339" type="System">
                                     <param id="0" name="First value">powerUp</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">0</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="5" name="Set frame" sid="979359944345263" type="Player">
-                                    <param id="0" name="Frame number">playerFrame</param>
-                                </action>
-                                <action id="-10" name="Add to" sid="115772263165882" type="System">
-                                    <param id="0" name="Variable">playerFrame</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-24" name="Move to top" sid="296406304611914" type="Player" />
-                            </actions>
-                        </event-block>
-                        <event-block sid="254453574387275">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="255310714550366" type="System">
-                                    <param id="0" name="First value">playerFrame</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">2</param>
-                                </condition>
-                                <condition id="-8" name="Compare two values" sid="531318193374710" type="System">
-                                    <param id="0" name="First value">powerUp</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="703516620240079" type="System">
-                                    <param id="0" name="Variable">playerFrame</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="558851484067885" type="System">
-                                    <param id="0" name="Variable">playerFrame</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="375521077876502">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="594267945390732" type="System">
+                                            <param id="0" name="Interval (seconds)">0.5</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="248254130063000" type="System">
+                                            <param id="0" name="First value">isDead</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="979359944345263" type="Player">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="760160772703878" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="336862405860554" type="Player">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="689092707056529" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="852189410219954" type="Player">
+                                            <param id="0" name="Frame number">2</param>
+                                        </action>
+                                        <action id="-24" name="Move to top" sid="296406304611914" type="Player" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-group>
@@ -1088,7 +1125,7 @@
             <actions>
                 <action id="-9" name="Set value" sid="469438023067346" type="System">
                     <param id="0" name="Variable">speedGame</param>
-                    <param id="1" name="Value">3000</param>
+                    <param id="1" name="Value">2000</param>
                 </action>
                 <action behavior="Bullet" id="0" name="Set speed" sid="491868129335455" type="enemy1">
                     <param id="0" name="Speed">speedGame</param>
@@ -1102,12 +1139,6 @@
                 <action behavior="Bullet" id="0" name="Set speed" sid="971439243356472" type="enemy4">
                     <param id="0" name="Speed">speedGame</param>
                 </action>
-                <action behavior="Bullet" id="0" name="Set speed" sid="214796659999575" type="enemy5">
-                    <param id="0" name="Speed">speedGame</param>
-                </action>
-                <action behavior="Bullet" id="0" name="Set speed" sid="676032756051339" type="enemy6">
-                    <param id="0" name="Speed">speedGame</param>
-                </action>
                 <action id="-9" name="Destroy" sid="461117377205217" type="tiro_arvore" />
                 <action behavior="Bullet" id="0" name="Set speed" sid="530306695882054" type="tld_casas">
                     <param id="0" name="Speed">speedGame</param>
@@ -1115,19 +1146,12 @@
                 <action id="-16" name="Wait" sid="815680781434034" type="System">
                     <param id="0" name="Seconds">7</param>
                 </action>
-                <action id="-13" name="Set time scale" sid="788879002851834" type="System">
-                    <param id="0" name="Time scale">1</param>
-                </action>
-                <action id="-9" name="Set value" sid="659670331165140" type="System">
-                    <param id="0" name="Variable">playerFrame</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-                <action id="3" name="Start" sid="993679615556583" type="Player">
-                    <param id="0" name="From">0</param>
-                </action>
                 <action id="-9" name="Set value" sid="906838638788724" type="System">
                     <param id="0" name="Variable">powerUp</param>
                     <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="788879002851834" type="System">
+                    <param id="0" name="Time scale">1</param>
                 </action>
                 <action id="-9" name="Set value" sid="638510074363819" type="System">
                     <param id="0" name="Variable">speedGame</param>
@@ -1145,21 +1169,33 @@
                 <action behavior="Bullet" id="0" name="Set speed" sid="447922730160378" type="enemy4">
                     <param id="0" name="Speed">speedGame</param>
                 </action>
-                <action behavior="Bullet" id="0" name="Set speed" sid="741859795345225" type="enemy5">
-                    <param id="0" name="Speed">speedGame</param>
-                </action>
-                <action behavior="Bullet" id="0" name="Set speed" sid="461203844197241" type="enemy6">
-                    <param id="0" name="Speed">speedGame</param>
-                </action>
                 <action behavior="Bullet" id="0" name="Set speed" sid="744452161121238" type="tld_casas">
                     <param id="0" name="Speed">speedGame</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="422110595841152">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="552431424708672" type="System">
+                    <param id="0" name="First value">powerUp</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="898868950067541" type="System">
+                    <param id="0" name="Seconds">7</param>
+                </action>
+                <action id="-9" name="Set value" sid="361127000451055" type="System">
+                    <param id="0" name="Variable">powerUp</param>
+                    <param id="1" name="Value">0</param>
                 </action>
             </actions>
         </event-block>
         <event-block sid="812660253957170">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="278278493542516" type="System">
-                    <param id="0" name="Interval (seconds)">20</param>
+                    <param id="0" name="Interval (seconds)">30</param>
                 </condition>
                 <condition id="-8" name="Compare two values" sid="171252881740951" type="System">
                     <param id="0" name="First value">jetpack.Count</param>
@@ -1170,6 +1206,26 @@
             <actions>
                 <action id="-3" name="Create object" sid="966581003968301" type="System">
                     <param id="0" name="Object to create">jetpack</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">1280</param>
+                    <param id="3" name="Y">random(0,700)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="661195452009817">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="728062421396534" type="System">
+                    <param id="0" name="Interval (seconds)">10</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="968226003590301" type="System">
+                    <param id="0" name="First value">jetpack.Count</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="863505951994710" type="System">
+                    <param id="0" name="Object to create">pizza</param>
                     <param id="1" name="Layer">1</param>
                     <param id="2" name="X">1280</param>
                     <param id="3" name="Y">random(0,700)</param>

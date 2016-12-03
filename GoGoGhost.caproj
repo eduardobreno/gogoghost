@@ -65,13 +65,16 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="6" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="2" sid="1778368724533726" speed="5">
+                <animation framecount="9" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="2" sid="1778368724533726" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.509615" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Restante_das_imagens_(sprites)\ghost1-58.png" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.586538" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Restante_das_imagens_(sprites)\ghost1-59.png" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.509615" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Restante_das_imagens_(sprites)\ghost1-60.png" />
                     <frame duration="1" hotspotX="0.495495" hotspotY="0.5" original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Restante_das_imagens_(sprites)\supernatural_insp-71.png" />
                     <frame duration="1" hotspotX="0.504425" hotspotY="0.5" original-source="D:\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Restante_das_imagens_(sprites)\jatpack-61.png" />
                     <frame duration="1" hotspotX="0.495495" hotspotY="0.5" original-source="D:\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Restante_das_imagens_(sprites)\jatpack-62.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.506329" hotspotY="0.5" original-source="D:\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Restante_das_imagens_(sprites)\insp_pacman-68.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -594,6 +597,33 @@
                             <point x="0" y="0.496689" />
                             <point x="0.115385" y="0.0596026" />
                             <point x="0.5" y="0.397351" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pizza" sid="527835789548188">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="595245309804550">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="494873669822678">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="230722318795954" speed="5">
+                    <frame duration="1" hotspotX="0.507042" hotspotY="0.5" original-source="D:\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Restante_das_imagens_(sprites)\insp_pacman-64.png">
+                        <collision-poly>
+                            <point x="0.15493" y="0.144737" />
+                            <point x="0.492958" y="0" />
+                            <point x="0.915493" y="0.0789474" />
+                            <point x="0.338028" y="0.5" />
+                            <point x="0.915493" y="0.921053" />
+                            <point x="0.492958" y="1" />
+                            <point x="0.15493" y="0.855263" />
+                            <point x="0" y="0.5" />
                         </collision-poly>
                     </frame>
                 </animation>
