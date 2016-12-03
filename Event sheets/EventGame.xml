@@ -39,7 +39,7 @@
                         </action>
                         <action id="-10" name="Add to" sid="448935942364535" type="System">
                             <param id="0" name="Variable">distanceTotal</param>
-                            <param id="1" name="Value">SpawnPoint.Bullet.Speed*dt</param>
+                            <param id="1" name="Value">SpawnPoint.Bullet.Speed*0.00005</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1131,8 +1131,8 @@
                 <action id="-3" name="Create object" sid="995161654526647" type="System">
                     <param id="0" name="Object to create">btn_new</param>
                     <param id="1" name="Layer">2</param>
-                    <param id="2" name="X">631</param>
-                    <param id="3" name="Y">537</param>
+                    <param id="2" name="X">624</param>
+                    <param id="3" name="Y">508.5</param>
                 </action>
                 <action id="0" name="Set text" sid="225757489637344" type="score_txt">
                     <param id="0" name="Text">&quot;Score: &quot;&amp;score</param>

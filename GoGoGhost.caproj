@@ -650,9 +650,9 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="922178861616451" speed="3">
-                    <frame duration="1" hotspotX="0.499608" hotspotY="0.498611" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.496513" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.499608" hotspotY="0.500692" />
+                    <frame duration="1" hotspotX="0.499608" hotspotY="0.500692" />
+                    <frame duration="1" hotspotX="0.499608" hotspotY="0.500692" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -670,6 +670,25 @@
                             <point x="0.498413" y="0.98913" />
                             <point x="0.031746" y="0.891304" />
                             <point x="0.0031746" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="278929312731839">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="976657632646864" speed="5">
+                    <frame duration="1" hotspotX="0.50505" hotspotY="0.5" original-source="D:\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\botões\botoes-52.png">
+                        <collision-poly>
+                            <point x="0.121212" y="0.869565" />
+                            <point x="0.040404" y="0.5" />
+                            <point x="0.232323" y="0.25" />
+                            <point x="0.494949" y="0.206522" />
+                            <point x="0.919192" y="0.0869565" />
+                            <point x="1" y="0.5" />
+                            <point x="0.878788" y="0.869565" />
+                            <point x="0.494949" y="1" />
                         </collision-poly>
                     </frame>
                 </animation>

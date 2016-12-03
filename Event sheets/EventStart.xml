@@ -3,6 +3,19 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>EventStart</name>
     <events>
+        <event-block sid="419962554569962">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="625996071285551" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="609370965746212" type="Audio">
+                    <param id="0" name="Audio file">Mystery_Skulls_-_Ghost_8-Bit</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="664428281358968">
             <conditions>
                 <condition id="3" name="On touched object" sid="183051365356125" type="Touch">
@@ -13,6 +26,7 @@
                 <action id="-2" name="Go to layout" sid="770490341303409" type="System">
                     <param id="0" name="Layout">Game</param>
                 </action>
+                <action id="33" name="Stop all" sid="591126522815814" type="Audio" />
             </actions>
         </event-block>
     </events>
