@@ -13,7 +13,6 @@
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
-        <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
@@ -551,14 +550,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Sprite2" sid="212336001777296">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="370658368717053" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="Audio" sid="124188919515832">
             <plugin id="Audio" />
         </object-type>
@@ -570,10 +561,6 @@
                 </behavior-type>
             </behaviors>
             <texture original-source="C:\Users\Eduardo Freitas\Desktop\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Restante_das_imagens_(sprites)\cenário2-69.png" />
-        </object-type>
-        <object-type name="SpriteFont" sid="103476045114518">
-            <plugin id="Spritefont2" />
-            <texture />
         </object-type>
         <object-type name="jetpack" sid="310575171686752">
             <plugin id="Sprite" />
@@ -629,13 +616,74 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="gameover" sid="330852293606225">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="296902797603163" speed="5">
+                    <frame duration="1" hotspotX="0.509769" hotspotY="0.465154" original-source="D:\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\Game_Over\gameover-53.png">
+                        <collision-poly>
+                            <point x="0.185613" y="0.269044" />
+                            <point x="0.509769" y="0.178282" />
+                            <point x="0.979574" y="0.00324149" />
+                            <point x="0.910302" y="0.465154" />
+                            <point x="0.900533" y="0.78282" />
+                            <point x="0.509769" y="0.996759" />
+                            <point x="0.0381883" y="0.930308" />
+                            <point x="0.000888099" y="0.465154" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="score_txt" sid="338945158357430">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="btn_new" sid="941806515995820">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="764391357350070" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="start_background" sid="865811212989641">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="922178861616451" speed="3">
+                    <frame duration="1" hotspotX="0.499608" hotspotY="0.498611" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.496513" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btn_start" sid="516321962051386">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="950885108061402" speed="5">
+                    <frame duration="1" hotspotX="0.501587" hotspotY="0.5" original-source="D:\Dropbox\UEA\LJE02 - Introdução a Programação de Jogos Eletrônicos\trabalho2\gogoghost\imgs\botões\botoes-51.png">
+                        <collision-poly>
+                            <point x="0.0253968" y="0.0869565" />
+                            <point x="0.498413" y="0.0108696" />
+                            <point x="0.974603" y="0.0869565" />
+                            <point x="1" y="0.5" />
+                            <point x="0.974603" y="0.913043" />
+                            <point x="0.498413" y="0.98913" />
+                            <point x="0.031746" y="0.891304" />
+                            <point x="0.0031746" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
-        <layout>Layout 1.xml</layout>
+        <layout>Game.xml</layout>
+        <layout>Start.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event Sheet 1.xml</event-sheet>
+        <event-sheet>EventGame.xml</event-sheet>
+        <event-sheet>EventStart.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="4">
